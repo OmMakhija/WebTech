@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <style>
+            p{color:red; font-style:italic;font-size:15px;}
+        </style>
+    </head>
+    <body>
+        <p>Javascript can change the style of an HTML element: </p>
+        <button type="button" onclick="myfunction()">Click Me!</button>
+        <p id="demo">This is a demonstration.</p>
+        <script>
+            function myfunction(){
+                document.getElementById("demo").style.fontStyle="normal";
+                document.getElementById("demo").style.color="black";
+                document.getElementById("demo").style.fontWeight="bold";
+            }
+        </script>
+    </body>
+</html>

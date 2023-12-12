@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>User Registration Form</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["registrationForm"]["username"].value;
+            var mobileNumber = document.forms["registrationForm"]["mobileNumber"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+            var dob = document.forms["registrationForm"]["dob"].value;
+
+            // Check if all fields are filled out
+            if (username === "" || mobileNumber === "" || password === "" || confirmPassword === "" || dob === "") {
+                alert("All fields are mandatory");
+                return false;
+            }
+
+            // Validate mobile number format
+            var mobilePattern = /^\d{10}$/;
+            if (!mobilePattern.test(mobileNumber)) {
+                alert("Mobile number should be 10 digits without any spaces or special characters.");
+                return false;
+            }
+
+            // Validate username format (combination of capital and small alphabets)
+            var usernamePattern = /^[A-Za-z]*$/;
+            if (!usernamePattern.test(username)) {
+                alert("Username must be a combination of capital and small alphabets.");
+                return false;
+            }
+
+            // Check if the passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>User Registration Form</h2>
+    <form name="registrationForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+

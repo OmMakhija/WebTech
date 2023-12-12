@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Change Background Color</title>
+    <style>
+        body {
+            transition: background-color 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background Color Changer</h1>
+    <p>This page will change its background color every 5 seconds.</p>
+
+    <script>
+        const colors = ['#FF5733', '#33FF6D', '#336DFF', '#FF33D1', '#D133FF']; // Add your desired colors
+        let currentIndex = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        // Change background color every 5 seconds
+        setInterval(changeBackgroundColor, 5000);
+    </script>
+</body>
+</html>

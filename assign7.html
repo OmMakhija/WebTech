@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>ABC INFOTECH Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"], input[type="password"], input[type="tel"], input[type="email"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function validate (){
+        var a = document.getElementById("contact_number").value
+        var phoneno = /^\d{10}$/;
+        if(!a.match(phoneno))
+        {
+            alert("THE VALUS ENTERED ARE EITHER NOT NUMBERS OR ARE OF MORE THAN 10 DIGITS :");
+            return false;
+        }
+        return true;
+        
+        }
+        </script>
+</head>
+<body>
+    <div class="container">
+        <h2>ABC INFOTECH Registration</h2>
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <th><label for="username">User Name:</label></th>
+                    <td><input type="text" id="username" name="username" required></td>
+                </tr>
+                <tr>
+                    <th><label for="password">Password:</label></th>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <th><label for="confirm_password">Confirm Password:</label></th>
+                    <td><input type="password" id="confirm_password" name="confirm_password" required></td>
+                </tr>
+                <tr>
+                    <th><label for="email">Email Id:</label></th>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <th><label for="contact_number">Contact Number:</label></th>
+                    <td><input type="tel" id="contact_number" name="contact_number" pattern="[0-9]{10}" required></td>
+                </tr>
+                <tr>
+                    <th>Gender:</th>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Highest Qualification:</th>
+                    <td>
+                        <select id="qualification" name="qualification" required>
+                            <option value="">Select</option>
+                            <option value="High School">High School</option>
+                            <option value="Bachelor's Degree">Bachelor's Degree</option>
+                            <option value="Master's Degree">Master's Degree</option>
+                            <option value="Ph.D.">Ph.D.</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Languages Known:</th>
+                    <td>
+                        <input type="checkbox" id="english" name="languages" value="English">
+                        <label for="english">English</label>
+                        <input type="checkbox" id="hindi" name="languages" value="Hindi">
+                        <label for="hindi">Hindi</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Preferred Programming Language:</th>
+                    <td>
+                        <select id="programming_language" name="programming_language">
+                            <option value="C++">C++</option>
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Two Lines to Describe Yourself:</th>
+                    <td>
+                        <textarea id="description" name="description" rows="2"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Register" onclick = "return validate()">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            Validation
+        </title>
+        <script>
+        function validate (){
+        var a = document.getElementById("pass").value;
+        var b = document.getElementById("cpass").value;
+        var c = document.getElementById("mob").value;
+        var phoneno = /^\d{10}$/;
+        if(a!=b)
+        {
+            alert("ABE PASSWORD CHECK KRLE");
+            return false;
+        }
+        else if(!c.match(phoneno))
+        {
+            alert("THE VALUS ENTERED ARE EITHER NOT NUMBERS OR ARE OF MORE THAN 10 DIGITS :");
+            return false;
+        }
+        else
+        return true;
+}
+        </script>
+    </head>
+<body>
+    <form>
+        Username<br><input type  = text name = t1 ><br>
+        Password<br><input type = password name = t2 id = pass><br>
+        Confirm Password<br><input type = password name = t3 id = cpass><br>
+        Mobile Number<br><input type = text name = t4 id =  mob><br>
+        <input type = submit value = "Register Me" onclick = "return validate()">
+    </form>
+</body>
+    </html>

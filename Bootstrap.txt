@@ -1,0 +1,11 @@
+Bootstrap was first used by twitter.
+Then was published as open source application in 2011.
+CDN - content delivery network ( reduces load on the server)
+Spacing classes
+{property}{sides}-{size} [mb - 2] m for margin, p for padding, t for top, b for bottom , l for left, r for right
+where size can be: 0 set value to 0
+1 set value spacer *.25
+h1*4>lorem4 and the press enter
+p>lorem100
+ctrl+alt+up/down for multiple cursors
+div>div*4 for 4 divisions

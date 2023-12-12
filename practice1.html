@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <style>
+         .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .oval-button{
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .oval {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-size: 20px;
+            margin: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" class="oval" id="textField1" readonly>
+            <input type="text" class="oval" id="textField2" readonly>
+            <input type="text" class="oval" id="textField3" readonly>
+            <button class="oval-button" onclick="playGame()">Play</button>
+        </div>
+        <script>
+            function random(){
+            return Math.floor(Math.random()*10+1)
+            
+            }
+            function playGame(){
+                
+                var num1=random()
+                var num2=random()
+                var num3=random()
+
+                if (num1===num2 && num2===num3){alert("Jackpot")}
+                else if(num1===num2 || num2===num3 || num1===num3){alert("close")}
+                else{alert("Better luck next time")}
+            document.getElementById('textField1').value = num1;
+            document.getElementById('textField2').value = num2;
+            document.getElementById('textField3').value = num3;
+                
+            }
+            
+        </script>
+    </body>
+</html>

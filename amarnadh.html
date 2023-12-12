@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>ABC register</title>
+<caption align="top"><h1><i><u>ABC INFOTECH Registration</u></i></caption>
+<script>
+function abc() 
+{
+var a = document.getElementById("pass").value;
+var b = document.getElementById("cpass").value;
+var c = documnet.getElementById("mob").value;
+var phoneno = /^\d{10}$/;
+if(a!=b)
+{
+alert("password are not match");
+return false;
+}
+else if (!c.match(phoneno))
+{
+alert("enter the valid number");
+return false;
+}
+else
+{
+return true;
+}}
+</script>
+<style>
+body{
+background-color:cyan;
+}
+table,td{
+background-color:black;
+color:white;
+border-color:red;
+}
+</style>
+</head>
+<body id="hhh">
+<form method="post">
+<table border ="2" width=35% align=center>
+<tr>
+<td>Username</td>
+<td><input type="text" name="name" placeholder="enter your username" required></td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td><input type="number"name="mob"placeholder="enter your mobile no" id="mob" required></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td><input type ="radio" name="gen"value="male"checked>Male<br>
+<input type ="radio" name ="gen"value="female"checked>Female</td>
+</tr>
+<tr>
+<td>Qualification</td>
+<td>
+<select name ="hqual">
+<option>under graduate</option>
+<option>graduate</option>
+<option>post graduate</option>
+<option>doctarate</option>
+</select>
+<required></td>
+</tr>
+<tr>
+<td>Email</td>
+<td><input type = "email" placeholder="give your email id" required></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type ="password" placeholder="create password" id="pass" required></td>
+</tr>
+<tr>
+<td>Confirm password</td>
+<td><input type ="password" placeholder="confirm password" id="cpass" required</td>
+</tr>
+<tr>
+<td>Languages known</td>
+<td><input type ="checkbox" name="lang" value="English" >English<br>
+<input type ="checkbox" name="lang" value="Hindi" >Hindi</td>
+</td>
+</tr>
+<tr>
+<td>Programming language</td>
+<td><input type="checkbox" name="pro lang" value="Java" checked>Java<br>
+<input type="checkbox" name="pro lang" value="C++" checked>C++<br>
+<input type="checkbox" name="pro lang" value="python" checked>Python</td>
+</tr> 
+<tr>
+<td>Describe yourself</td>
+<td><input type="text area" name="you" placeholder="two lines about you" required></td>
+</tr>
+<caption align = "bottom"><input type = submit value = "register" onclick="return abc()"></caption>
+</table>
+</form>
+</body>
+</html>

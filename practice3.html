@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table Generator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ccc; /* Background color for odd rows */
+        }
+    </style>
+</head>
+<body>
+    <h2>Multiplication Table Generator</h2>
+    <form id="numberForm">
+        <label for="numberInput">Enter a number:</label>
+        <input type="text" id="numberInput" required>
+        <input type="submit" value="Generate Table">
+    </form>
+
+    <div id="tableContainer"></div>
+
+    <script>
+        const numberForm = document.getElementById("numberForm");
+        const numberInput = document.getElementById("numberInput");
+        const tableContainer = document.getElementById("tableContainer");
+
+        numberForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            tableContainer.innerHTML = ""; // Clear previous tables
+
+            const inputNumber = parseInt(numberInput.value);
+
+            if (isNaN(inputNumber) || inputNumber < 1) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+
+            generateTable(inputNumber);
+        });
+
+        function generateTable(number) {
+            let tableHTML = "<table>";
+            for (let i = 1; i <= 10; i++) {
+                tableHTML += "<tr>";
+                tableHTML += `<td>${number} * ${i} = ${number * i}</td>`;
+                tableHTML += "</tr>";
+            }
+            tableHTML += "</table>";
+            tableContainer.innerHTML = tableHTML;
+
+            let row = 0;
+            const rows = tableContainer.querySelectorAll("tr");
+            const interval = setInterval(() => {
+                if (row < rows.length) {
+                    rows[row].style.display = "table-row";
+                    row++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
