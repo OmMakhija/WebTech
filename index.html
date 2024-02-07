@@ -1,39 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Indian Idol Voting</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>Indian Idol Voting</h1>
-    <!-- Channel logo -->
-    <img src="channel_logo.png" alt="Channel Logo">
-  </header>
-  <main>
-    <section id="participants">
-      <h2>Choose your favorite participant:</h2>
-      <table>
-        <!-- Participant list will be dynamically generated here -->
-        <tr>
-          <th>Participant</th>
-          <th>Details</th>
-          <th>Vote</th>
-        </tr>
-        <!-- Example row -->
-        <tr>
-          <td>Participant Name</td>
-          <td>Participant Details</td>
-          <td><button onclick="vote('participant_id')">Vote</button></td>
-        </tr>
-      </table>
-    </section>
-  </main>
-  <footer>
-    <!-- Logout button -->
-    <button onclick="logout()">Logout</button>
-  </footer>
-  <script src="script.js"></script>
-</body>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action = "result.php">
+            Name<input type="text" id="name" name="n1"><br>
+            Gender<br>
+            <input type="radio" id="male" name="n2" value="male">Male<br>
+            <input type="radio" id="female" name="n2" value="female">Female<br>
+            <input type = submit value = OK>
+        </form>
+    </body>
 </html>
